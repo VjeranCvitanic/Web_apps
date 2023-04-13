@@ -1,0 +1,114 @@
+body 
+{
+    background-color: #0388aa;
+}
+
+p
+{
+    color: #990a0a;
+    display: flex;
+    justify-content: center;
+}
+
+h1
+{
+    color: #004400;
+    display: flex;
+    justify-content: center;
+}
+
+#pitch
+{
+    position: relative;
+}
+
+div
+{
+    display: flex;
+    justify-content: center;
+}
+
+.dragme
+{
+    position:  absolute;
+    background: rgba(255,255,255,0); 
+    border: 2px  solid rgba(0,0,0,0); 
+    border-radius: 4px; padding: 8px;
+}
+
+#leo
+{
+    left: 0;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#ciko
+{
+    left: 40px;
+    top: 50; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#avo
+{
+    left: 80px;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#josip
+{
+    left: 120px;
+    top: 50; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#bajsa
+{
+    left: 160px;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#oreb
+{
+    left: 200px;
+    top: 50; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#tonci
+{
+    left: 240px;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#biuk
+{
+    left: 280px;
+    top: 50; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#maras
+{
+    left: 320px;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#ujo
+{
+    left: 360px;
+    top: 50; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+#korda
+{
+    left: 400px;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+}
+
+button
+{
+    position: absolute;
+    left: 1250px;
+    top: 100px;
+    width: 250px;
+    height: 50px;
+    color: rgb(1, 23, 42);
+    background-color: bisque;
+}

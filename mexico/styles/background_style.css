@@ -1,0 +1,57 @@
+body {
+    background-image: linear-gradient(#6ad7e0, white);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.ground {
+    height: 350px;
+    width: 200%;
+    background-image: linear-gradient(#e0ad71, #eed3b1);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sun {
+    height: 200px;
+    width: 200px;
+    background-image: linear-gradient(#e4e99e, #dde479);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 380px;
+    border-radius: 50%;
+    position: fixed;
+}
+
+.clouds {
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.cactus {
+    height: 300px;
+    width: 300px;
+    margin-left: 450px;
+    margin-right: auto;
+    margin-top: 450px;
+    display: block;
+    position: fixed;
+    z-index: 1;
+}
+
+
+
+
+
