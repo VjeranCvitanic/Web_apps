@@ -28,6 +28,19 @@ $_SESSION['sezona'] = $sezona;
 <?$sezona_za_gledat = 0;?>
 
 <body style="background-image: url(images/mexican-background.webp);">
+<div id="music-btn">
+        <a href="music.html" target="_blank" class="button">Glazba</a>
+    </div>
+<div id="refresh-btn">
+    <button id="refresh" onclick="window.location.reload();" class="button">Refresh</button>
+</div>
+
+    <div id="clouds" class="clouds-flow">
+        <img alt="clouds" src="images/mexico-clouds-1.png" class="clouds-animation">
+    </div>
+    <div id="clouds" class="clouds-flow-2">
+        <img alt="clouds" src="images/mexico-clouds-1.png" class="clouds-animation">
+    </div>
 
     <img alt="mexico" src="images/mexico-shadow.png" class="logo"></img>
     <p>FESB meksiko liga sezona <?php echo $sezona; ?></p>
@@ -46,7 +59,7 @@ $_SESSION['sezona'] = $sezona;
     }
 ?>
 <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn button">Sezone</button>
+    <button onclick="myFunction()" class="dropbtn button" style="height: 53px">Sezone</button>
     <div id="myDropdown" class="dropdown-content">
         <?php 
             foreach ($array_ as $bbb) { 
@@ -59,13 +72,12 @@ $_SESSION['sezona'] = $sezona;
 </div>
         <button id="myButton4" class="button">Završi sezonu <?php echo $sezona; ?></button>
 
-        <a href="music.html" target="_blank" class="button">Glazba</a>
     </div>
 
     <br>
 
     <div id="bottom" class="tumble">
-        <img alt="tumbleweed" src="images/tumbleweed.png" class="animation"></img>
+        <img alt="tumbleweed" src="images/tumbleweed.png" class="tumble-animation"></img>
     </div>
     
     <script src="button.js"></script>

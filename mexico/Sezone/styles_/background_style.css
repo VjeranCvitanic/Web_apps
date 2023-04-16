@@ -6,13 +6,15 @@ body {
 }
 
 .ground {
-    height: 350px;
+    height: 380px;
     width: 200%;
     background-image: linear-gradient(#e0ad71, #eed3b1);
     display: block;
     position: absolute;
     bottom: 0;
+    top: 50%;
     left: 0;
+    z-index: 1;
 }
 
 .sun {
@@ -21,37 +23,41 @@ body {
     background-image: linear-gradient(#e4e99e, #dde479);
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-left: auto;
+    margin-left: 70%;
     margin-right: auto;
-    margin-top: 380px;
+    margin-top: 30%;
     border-radius: 50%;
     position: fixed;
 }
 
 .clouds {
     height: 500px;
-    width: 500px;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
     display: block;
     justify-content: center;
-    align-items: center;
     position: fixed;
 }
 
 .cactus {
     height: 300px;
-    width: 300px;
-    margin-left: 450px;
+    width: auto;
+    margin-left: 60%;
     margin-right: auto;
     margin-top: 450px;
     display: block;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
 }
 
-
-
-
-
+.sign {
+    height: 300px;
+    width: auto;
+    margin-left: 20%;
+    margin-right: auto;
+    margin-top: 480px;
+    display: block;
+    position: fixed;
+    z-index: 3;
+}

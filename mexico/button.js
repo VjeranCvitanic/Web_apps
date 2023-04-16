@@ -78,6 +78,12 @@ async function handleButtonClick2(e){
 
 
 async function handleButtonClick3(e){
+    const potvrda = confirm('Želiš li svima dodati po kuću?');
+    console.log(potvrda);
+    if(!potvrda) {
+        throw new Error('Kuće nisu dodane.');
+    }
+
     try {
         const serverResponse = await fetch(`API.php?action=NewKuća_Svima`);
         const responseData = await serverResponse.json();
