@@ -31,8 +31,16 @@ foreach($players as $player)
     {
         $sezona = $player[5];
     }
-    $avg = $player[2]/$player[3];
-    $avg = round($avg, 2);
+    if($player[3] > 0)
+    {
+        $avg = $player[2]/$player[3];
+        $avg = round($avg, 2);
+    }
+    else
+    {
+        $avg = 0;
+    }
+   
     getDbAccess()->executeQuery("UPDATE MEXICO_2 SET PPK='$avg' WHERE ID='$player[0]' AND SEZONA='$sezona'"); //PPK = bodovi po kući
     echo "<tr><td>"
     .$player[1]."</td>

@@ -39,14 +39,24 @@ $_SESSION['sezona'] = $sezona;
         <button id="Button" class="button">Unesi novi rezultat</button>
         <button id="myButton2" class="button">Povećaj broj odigranih kuća</button>
         <button id="myButton3" class="button">Povećaj broj odigranih kuća SVIMA</button>
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn button">Sezone</button>
-            <div id="myDropdown" class="dropdown-content">
-            <?php for ($i = 1; $i <= $sezona; $i++) { ?>
-                <a href="./Sezone/index.php?sezona_za_gledat=<?php echo $i;?>">Sezona <?php echo $i;?></a>
-                <?php } ?>
-            </div>
-        </div>
+        <?php 
+    $array_ = array();
+    for ($i = 1; $i <= $sezona-1; $i++) {
+        array_push($array_, $i);  
+    }
+?>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn button">Sezone</button>
+    <div id="myDropdown" class="dropdown-content">
+        <?php 
+            foreach ($array_ as $bbb) { 
+        ?>
+        <a href="./Sezone/index.php?sezona_za_gledat=<?php echo $bbb; ?>">
+            Sezona <?php echo $bbb; ?>
+        </a>
+        <?php } ?>
+    </div>
+</div>
         <button id="myButton4" class="button">Završi sezonu <?php echo $sezona; ?></button>
 
         <a href="music.html" target="_blank" class="button">Glazba</a>

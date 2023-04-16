@@ -10,6 +10,7 @@
 if (isset($_GET['sezona_za_gledat'])) {
   $sezona_ = $_GET['sezona_za_gledat'];
 }
+
 ?>
 
 <?php require_once("./php/get_season_.php");?>
@@ -17,7 +18,7 @@ if (isset($_GET['sezona_za_gledat'])) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FESB MEKSIKO LIGA SEZONA 1</title>
+	<title>FESB MEKSIKO LIGA</title>
 	<LINK REL="stylesheet" HREF="../styles/style.css" TYPE="text/css">
 </head>
 
@@ -26,7 +27,7 @@ if (isset($_GET['sezona_za_gledat'])) {
     <img alt="mexico" src="../images/mexico-shadow.png" class="logo"></img>
     <p>FESB meksiko liga SEZONA <?php echo $sezona_; ?></p>
 
-    <?php include_once("php/print_scores.php");?>
+    <?php include("./php/print_scores.php");?>
 
     <br>
 

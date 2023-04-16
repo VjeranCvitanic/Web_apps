@@ -3,8 +3,8 @@
 <?php
 $result = getDbAccess()->executeQuery("SELECT MAX(SEZONA) FROM MEXICO_2");
 if ($result !== false) {
-    $sezona_ = $result[0][0];
+    $sezona_max = $result[0][0];
 } else {
-    $sezona_ = 0;
+    $sezona_max = 0;
 }
 ?>

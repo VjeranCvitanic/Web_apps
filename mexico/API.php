@@ -8,8 +8,6 @@ session_start();
 // Retrieve the global variable from the session
 $sezona = $_SESSION['sezona'];
 
-echo $sezona;
-
 
 //API.php?action=togglePostLike
 // function that we call from our JS code that processes the request and calls actions that execute queries
@@ -32,14 +30,15 @@ function processRequest(){
         break;
       case 'NewSeason':
         proccessZavršiSezonu($success, $reason);
+        break;
       default:
-      echo(json_encode(array(
-         "success" => false,
-         "reason" => "Unknown action: $action"
-      )));
-      break;
+        echo(json_encode(array(
+          "success" => false,
+          "reason" => "Unknown action: $action"
+        )));
+        break;
     }
-
+    
     echo(json_encode(array(
       "success" => $success,
       "reason" => $reason
@@ -54,6 +53,7 @@ function getRequestParameter($key) {
 
 //API.php?action=toggleCardLike&id=1&liked=1
 function proccessNewScore(&$success, &$reason){
+  global $sezona;
   $bere_bodovi = getRequestParameter("bere_bodovi");
   $tonći_bodovi = getRequestParameter("tonći_bodovi");
   $muni_bodovi = getRequestParameter("muni_bodovi");
@@ -61,7 +61,7 @@ function proccessNewScore(&$success, &$reason){
   $ciko_bodovi = getRequestParameter("ciko_bodovi");
 
   if(is_numeric($bere_bodovi) && is_numeric($tonći_bodovi) && is_numeric($muni_bodovi) && is_numeric($biuk_bodovi) && is_numeric($ciko_bodovi)){
-    NewScore($bere_bodovi, $tonći_bodovi, $muni_bodovi, $biuk_bodovi, $ciko_bodovi);
+    NewScore($bere_bodovi, $tonći_bodovi, $muni_bodovi, $biuk_bodovi, $ciko_bodovi, $sezona);
     $success = true;
   }
   else {
@@ -71,6 +71,7 @@ function proccessNewScore(&$success, &$reason){
 }
 
 function proccessNewKuća(&$success, &$reason){
+  global $sezona;
   $bere_bodovi = getRequestParameter("bere_bodovi");
   $tonći_bodovi = getRequestParameter("tonći_bodovi");
   $muni_bodovi = getRequestParameter("muni_bodovi");
@@ -78,7 +79,7 @@ function proccessNewKuća(&$success, &$reason){
   $ciko_bodovi = getRequestParameter("ciko_bodovi");
 
   if(is_numeric($bere_bodovi) && is_numeric($tonći_bodovi) && is_numeric($muni_bodovi) && is_numeric($biuk_bodovi) && is_numeric($ciko_bodovi)){
-    NewKuća($bere_bodovi, $tonći_bodovi, $muni_bodovi, $biuk_bodovi, $ciko_bodovi);
+    NewKuća($bere_bodovi, $tonći_bodovi, $muni_bodovi, $biuk_bodovi, $ciko_bodovi, $sezona);
     $success = true;
   }
   else {
@@ -88,15 +89,16 @@ function proccessNewKuća(&$success, &$reason){
 }
 
 function proccessNewKuća_Svima(&$success, &$reason){
-  NewKuća_Svima();
+  global $sezona;
+  NewKuća_Svima($sezona);
   $success = true;
 }
 
-function proccessZavršiSezonu($success, $reason)
+function proccessZavršiSezonu(&$success, &$reason)
 {
   global $sezona;
   $sezona = $sezona + 1;
-  NewSeason();
+  NewSeason($sezona);
   $success = true;
 }
 

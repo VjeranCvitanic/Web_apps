@@ -1,8 +1,9 @@
 <?php require_once("database_connect.php");?>
 <div><table width="100%">
 <?php
-$players = getDbAccess()->executeQuery("SELECT * FROM MEXICO_2 WHERE SEZONA=$sezona_ ORDER BY PPK Desc");
 
+global $sezona_;
+$players = getDbAccess()->executeQuery("SELECT * FROM MEXICO_2 WHERE SEZONA=$sezona_ ORDER BY PPK Desc");
 
 echo "<thead>
     <tr>
@@ -23,8 +24,17 @@ echo "<thead>
 <tbody>";
 
 foreach($players as $player)
-{   $avg = $player[2]/$player[3];
-    $avg = round($avg, 2);
+{   
+    if($player[3] > 0)
+    {
+        $avg = $player[2]/$player[3];
+        $avg = round($avg, 2);
+    }
+    else
+    {
+        $avg = 0;
+    }
+    
     getDbAccess()->executeQuery("UPDATE Mexico SET PPK='$avg' WHERE ID='$player[0]'"); //PPK = bodovi po kući
     echo "<tr><td>"
     .$player[1]."</td>

@@ -96,8 +96,11 @@ async function handleButtonClick3(e){
 
 async function handleButtonClick4(e){
     const potvrda = confirm('Želiš li završiti sezonu?');
-    if(potvrda == null)
-    {return;}
+    console.log(potvrda);
+    if(!potvrda) {
+        throw new Error('Sezona nije završena.');
+    }
+
 
     try {
         const serverResponse = await fetch(`API.php?action=NewSeason`);
