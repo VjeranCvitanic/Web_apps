@@ -27,7 +27,7 @@ $_SESSION['sezona'] = $sezona;
 <?global $sezona_za_gledat;?>
 <?$sezona_za_gledat = 0;?>
 
-<body style="background-image: url(images/mexican-background.webp);">
+<body style="background-image: url(images/mexican-background-upscale.png);">
 <div id="music-btn">
         <a href="music.html" target="_blank" class="button">Glazba</a>
     </div>
